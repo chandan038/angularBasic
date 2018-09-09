@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+.brand-logo >img {
+	width:40px;
+	height: 40px;
+}
+/* Menu - profile */
+.bg-card-user {
+	background: rgba(0,77,64,.5);
+	padding: 30px 0px 50px 0px;
+}
+.truncate >img {
+	width: 110px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+/* FOOTER */
+footer .foot-text {
+	margin-top: 10px;
+}
+
+i.iconis {
+    font-size: 2em!important;
+    margin-top: 8px;
+}
+.login {
+    border: 1px solid #FFF;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,.7);
+    padding: 20px;
+    width: 30%;
+}

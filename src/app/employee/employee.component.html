@@ -1,0 +1,42 @@
+<app-header></app-header>
+{{ message }}
+<div class="row">
+<div class="col s10 offset-s1">
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">Employee
+         <a [routerLink]="['/addemployee']" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
+      </span>  
+          <table>
+            <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Company</th>
+                  <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of employeeService.employees  | paginate: { itemsPerPage: 5, currentPage: p }">
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.username }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.phone }}</td>
+                <td>{{ emp.company }}</td>
+                <td>
+                  <a class="btn btn-floating btn-small waves-effect waves-light green pointer" (click)="onEdit(emp)" ><i class="material-icons">edit</i></a>
+                  <a class="btn btn-floating btn-small waves-effect waves-light red pointer margin-left-10" (click)="onDelete(emp.id,employeeForm)" ><i class="material-icons">delete_forever</i></a>
+                </td>
+              </tr>
+            </tbody>
+            <tr>
+              <td colspan="6" style="text-align:right"> <pagination-controls (pageChange)="p = $event"></pagination-controls></td>
+            </tr>
+            
+          </table>
+     </div>    
+  </div>
+</div>
+</div>

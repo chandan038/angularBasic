@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <form #employeeForm ="ngForm" (ngSubmit)= "onSubmit(employeeForm)">
+      <input type="hidden" name="id" #id='ngModel' [(ngModel)]="selectedEmployee.id">
+    <div class="card">
+    <div class="card-content">
+      <span class="card-title">Add Employee</span>
+      <div class="row">
+         <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input name="username" #username="ngModel" type="text" [(ngModel)]= "selectedEmployee.username" placeholder="Enter Full Name">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input type="text" #email="ngModel" name="email" [(ngModel)]= "selectedEmployee.email" placeholder="Enter Email Address" autoComplete="off">
+              <label for="position">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input type="text" name="phone" #phone="ngModel" [(ngModel)]= "selectedEmployee.phone" placeholder="Enter Phone Number">
+              <label for="office">Phone</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_balance</i>
+              <input type="text" name="company" #company="ngModel" [(ngModel)]= "selectedEmployee.company" placeholder="Enter Current Company">
+              <label for="salary">Company</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">lock</i>
+              <input type="password" name="password" #company="ngModel" [(ngModel)]= "selectedEmployee.password" placeholder="Enter Secure Password">
+              <label for="salary">Password</label>
+            </div>
+          </div>
+    </div>
+    <div class="card-action">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <button class="btn waves-effect waves-light" type="button" (click)="resetForm(employeeForm)" name="action" style="margin-left: 20px;">Reset
+        <i class="material-icons right">refresh</i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>

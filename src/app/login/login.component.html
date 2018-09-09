@@ -1,0 +1,27 @@
+<div class="col m6 s6 offset-m3 offset-s3 center">
+  <div class="truncate bg-card-user">
+    <img src="assets/logo.png" alt="" class="circle responsive-img">
+		<div class="row login">
+		 	<h4>Login</h4>
+		  <form class="col s12" #loginForm ="ngForm" (ngSubmit)= "onSubmit(loginForm)">
+		    <div class="row">
+			    <div class="input-field col m12 s12">
+			      <i class="material-icons iconis prefix">account_box</i>
+						<input name="username" id="username" #username="ngModel" type="text" [(ngModel)]= "login.username">
+			      <label for="username">Email</label>
+			    </div>
+			  </div>
+				<div class="row">
+				  <div class="input-field col m12 s12">
+				    <i class="material-icons iconis prefix">enhanced_encryption</i>
+						<input name="password" id="password" #password="ngModel" type="password" [(ngModel)]= "login.password">
+            <label for="password">Password</label>
+				  </div>
+				</div>
+			  <div class="row">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
+				</div>
+			</form>
+		</div>
+  </div>
+</div>
